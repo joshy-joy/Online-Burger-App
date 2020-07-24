@@ -1,0 +1,37 @@
+.BuildControls {
+    width: 100%;
+    background-color: #cf8f2e;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    box-shadow: 0 2px 1px #cccccc;
+    margin: auto;
+    padding: 10px 0;
+}
+
+.PurchaseButton {
+    text-align: center;
+    margin-top: 20px;
+    width: 21%;
+    background-color: #fa9c0f;
+    border: 1px solid #aa8040;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.PurchaseButton:hover {
+    color: white;
+    background-color: #aa8040;
+    border: 1px solid #fa9c0f;
+}
+
+.PurchaseButton:disabled {
+    cursor: not-allowed;
+    background-color: rgba(196, 186, 186, 0.959);
+}
+
+.Price {
+    padding: 10px;
+}
