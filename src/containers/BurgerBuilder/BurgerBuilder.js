@@ -64,6 +64,10 @@ class BurgerBuilder extends Component {
         this.setState({purchasing: true});
     }
 
+    closeModel = () => {
+        this.setState({purchasing: false});
+    }
+
     render() {
         const disabled = { ...this.state.ingredients};
         for(let item in disabled) {
@@ -71,7 +75,7 @@ class BurgerBuilder extends Component {
         }
         return (
             <Aux>
-                <Model show={this.state.purchasing}>
+                <Model show={this.state.purchasing} closeModel={this.closeModel}>
                     <OrderSummer ingredients={this.state.ingredients} />
                 </Model>
                 <Burger ingredients={this.state.ingredients} />
