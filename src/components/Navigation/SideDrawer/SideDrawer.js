@@ -7,9 +7,9 @@ import Logo from './../../Logo/Logo';
 import classes from './SideDrawer.css';
 
 const sideDrawer = (props) => {
-    let attachedClass = [classes.sideDrawer, classes.Close];
+    let attachedClass = [classes.SideDrawer, classes.Close];
     if (props.show) {
-        attachedClass = [classes.sideDrawer, classes.Open];
+        attachedClass = [classes.SideDrawer, classes.Open];
     }
     return(
         <Aux>
