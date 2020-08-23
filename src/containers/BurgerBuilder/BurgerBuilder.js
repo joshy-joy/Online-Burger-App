@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import axios from './../../axios-order';
+
 import Aux from '../../hoc/Aux';
 import Burger from '../../components/Burger/Burger';
 import BuildControls from '../../components/Burger/BuildControls/BuildControls';
@@ -69,7 +71,34 @@ class BurgerBuilder extends Component {
     }
 
     purchaseContinueHandler = () => {
-        alert('Thanks for your purchase..lol!');
+        const data = {
+            ingredients: this.state.ingredients,
+            price: this.state.price,
+            user: {
+                name: 'Joshy Joy',
+                email: 'joshy@gmail.com',
+                address: {
+                    address1: 'Home no. 22,',
+                    locality: 'cochin',
+                    district: 'Ernakulam',
+                    ctate: 'Kerala',
+                    country: 'India',
+                },
+                contact: 9998887765
+            },
+            delivary_mode: 'fastest',
+        };
+
+        // post request sending method
+        axios.post('/purchase.json', data).then(
+            result => {
+                console.log(result);
+            }
+        ).catch(
+            error => {
+                console.log(error);
+            }
+        );
     }
 
     render() {
